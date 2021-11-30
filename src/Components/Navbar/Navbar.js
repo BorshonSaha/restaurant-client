@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { ShoppingCartIcon } from '@heroicons/react/outline';
 import './Navbar.css';
+import { UserContext } from '../../App';
 
 const Navbar = () => {
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
     return (
         <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5 sticky-top">
             <div class="container-fluid">
@@ -21,13 +25,15 @@ const Navbar = () => {
                         <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a> */}
                     </div>
                     <div class="navbar-nav ms-auto align-items-center gap-3">
-                        <a href="/home" class="nav-item nav-link"><h5>Home</h5></a>
+                        {/* <a href="/home" class="nav-item nav-link"><h5>Home</h5></a>
                         <a href="/menu" class="nav-item nav-link"><h5>Menu</h5></a>
-                        <a href="#" class="nav-item nav-link"><h5>Reservation</h5></a>
-                        <a href="/aboutUs" class="nav-item nav-link"><h5>About Us</h5></a>
-                        <a href="#" class="nav-item nav-link"><h5>Login</h5></a>
+                        {/* <a href="#" class="nav-item nav-link"><h5>Reservation</h5></a> */}
+                       {/* <a href="/aboutUs" class="nav-item nav-link"><h5>About Us</h5></a>
+                        {
+                            loggedInUser.name || <a href="#" class="nav-item nav-link"><h5>Login</h5></a>
+                        }
                         <a href="/admin" class="nav-item nav-link"><h5>Admin</h5></a>
-                        <a href="#" class="nav-item nav-link"><ShoppingCartIcon className='shoppingCart'></ShoppingCartIcon></a>
+                        <a href="/cart" class="nav-item nav-link"><ShoppingCartIcon className='shoppingCart'></ShoppingCartIcon></a> */}
                     </div>
                 </div>
             </div>

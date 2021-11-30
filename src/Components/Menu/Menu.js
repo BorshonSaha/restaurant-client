@@ -12,7 +12,7 @@ const Menu = () => {
         fetch('http://localhost:5000/getFood')
             .then(res => res.json())
             .then(data => setFoods(data));
-    })
+    },[])
 
     return (
         <div>
