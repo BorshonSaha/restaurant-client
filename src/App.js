@@ -12,7 +12,6 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Cart from './Components/Cart/Cart';
 import MakeAdmin from './Components/MakeAdmin/MakeAdmin';
 import AdminList from './Components/AdminList/AdminList';
 import AddStaff from './Components/AddStaff/AddStaff';
@@ -20,6 +19,7 @@ import StaffList from './Components/StaffList/StaffList';
 import { createContext, useState } from 'react';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Login from './Components/Login/Login';
+import Cart from './Components/Cart/Cart';
 
 export const UserContext = createContext();
 
@@ -43,9 +43,6 @@ function App() {
           <PrivateRoute path="/admin">
             <Admin></Admin>
           </PrivateRoute>
-          {/* <Route path="/admin">
-            <Admin></Admin>
-          </Route> */}
           <Route path="/addFood">
             <AddFood></AddFood>
           </Route>

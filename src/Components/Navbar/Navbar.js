@@ -4,10 +4,15 @@ import './Navbar.css';
 import { UserContext } from '../../App';
 import { Nav } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import { CartState } from '../context/Context';
 
 const Navbar = () => {
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    const{
+        state: {cart},
+    } = CartState();
 
     return (
         <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5 sticky-top">
@@ -46,7 +51,7 @@ const Navbar = () => {
                             <Nav.Link ><Link to="/admin"><h5>Admin</h5></Link></Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link ><Link to="/cart"><ShoppingCartIcon className='shoppingCart'></ShoppingCartIcon></Link></Nav.Link>
+                            <Nav.Link ><Link to="/cart"><ShoppingCartIcon className='shoppingCart'></ShoppingCartIcon><label>({cart.length})</label></Link></Nav.Link>
                         </Nav.Item>
                     </Nav>
                     </div>
