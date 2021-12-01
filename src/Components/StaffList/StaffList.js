@@ -11,7 +11,6 @@ const StaffList = () => {
         fetch(`http://localhost:5000/deleteStaff/${id}`, {
             method: 'DELETE'
         })
-        window.location.reload();
     }
 
     useEffect(() => {

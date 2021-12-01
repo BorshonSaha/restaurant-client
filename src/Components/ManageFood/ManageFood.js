@@ -45,7 +45,6 @@ const ManageFood = () => {
         fetch(`http://localhost:5000/delete/${id}`, {
             method: 'DELETE'
         })
-        window.location.reload();
     }
 
     return (

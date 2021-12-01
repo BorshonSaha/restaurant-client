@@ -11,7 +11,6 @@ const AdminList = () => {
         fetch(`http://localhost:5000/deleteAdmin/${id}`, {
             method: 'DELETE'
         })
-        window.location.reload();
     }
 
     useEffect(() => {

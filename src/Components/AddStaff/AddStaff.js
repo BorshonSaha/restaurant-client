@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Button } from 'react-bootstrap';
+import { Container, Button, Form } from 'react-bootstrap';
 import Navbar from '../Navbar/Navbar';
 
 const AddStaff = () => {
@@ -25,19 +25,27 @@ const AddStaff = () => {
             <Navbar></Navbar>
             <h1 className="App">Add Staff</h1>
             <Container>
-                <div className="from-group pt-3" >
-                    <input type="text" id='name' className="form-control" name='name' placeholder="Enter Name" required />
-                </div>
-                <div className="from-group pt-3" >
-                    <input type="text" id='address' className="form-control" name='address' placeholder="Enter Address" required />
-                </div>
-                <div className="from-group pt-3" >
-                    <input type="number" id='number' className="form-control" name='number' placeholder="Enter Phone Number" required />
-                </div>
-                <div className="from-group pt-3" >
-                    <input type="number" id='salary' className="form-control" name='salary' placeholder="Enter Salary" required />
-                </div>
-                <Button className="mt-3" onClick={addStaff}>Submit</Button>
+                <Form>
+                    <Form.Group className="pt-3" controlId="name">
+                        <Form.Control type="text" placeholder="Enter name" />
+                    </Form.Group>
+
+                    <Form.Group className="pt-3" controlId="address">
+                        <Form.Control type="text" placeholder="Enter address" />
+                    </Form.Group>
+
+                    <Form.Group className="pt-3" controlId="number">
+                        <Form.Control type="number" placeholder="Enter phone number" />
+                    </Form.Group>
+
+                    <Form.Group className="pt-3" controlId="salary">
+                        <Form.Control type="number" placeholder="Enter salary" />
+                    </Form.Group>
+
+                    <Button className="mt-3" onClick={addStaff} variant="primary">
+                        Submit
+                    </Button>
+                </Form>
             </Container>
         </div>
     );

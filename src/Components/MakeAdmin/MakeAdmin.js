@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Button } from 'react-bootstrap';
+import { Container, Button, Form } from 'react-bootstrap';
 import Navbar from '../Navbar/Navbar';
 
 const MakeAdmin = () => {
@@ -25,24 +25,27 @@ const MakeAdmin = () => {
             <Navbar></Navbar>
             <h1 className="App">Make Admin</h1>
             <Container>
-                <form>
-                    <div className="from-group pt-3" >
-                        <input type="text" id='name' className="form-control" name='name' placeholder="Enter Name" required />
-                    </div>
-                    <div className="from-group pt-3" >
-                        <input type="email" id='email' className="form-control" name='email' placeholder="Enter Email" required />
-                    </div>
-                    <div className="from-group pt-3" >
-                        <input type="number" id='number' className="form-control" name='number' placeholder="Enter Phone Number" required />
-                    </div>
-                    <div className="from-group pt-3" >
-                        <input type="text" id='address' className="form-control" name='address' placeholder="Enter Address" required />
-                    </div>
-                    {/* <Button onClick={makeAdmin} className="mt-3">Submit</Button> */}
-                    <div className="pt-3">
-                        <input onClick={makeAdmin} type="submit" className="btn btn-primary" value="Submit" />
-                    </div>
-                </form>
+                <Form>
+                    <Form.Group className="pt-3" controlId="name">
+                        <Form.Control type="text" placeholder="Enter name" />
+                    </Form.Group>
+
+                    <Form.Group className="pt-3" controlId="email">
+                        <Form.Control type="email" placeholder="Enter email" />
+                    </Form.Group>
+
+                    <Form.Group className="pt-3" controlId="number">
+                        <Form.Control type="number" placeholder="Enter phone number" />
+                    </Form.Group>
+
+                    <Form.Group className="pt-3" controlId="address">
+                        <Form.Control type="text" placeholder="Enter address" />
+                    </Form.Group>
+
+                    <Button className="mt-3" onClick={makeAdmin} variant="primary">
+                        Submit
+                    </Button>
+                </Form>
             </Container>
         </div>
     );

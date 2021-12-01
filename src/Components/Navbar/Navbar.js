@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { ShoppingCartIcon } from '@heroicons/react/outline';
 import './Navbar.css';
 import { UserContext } from '../../App';
+import { Nav } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -24,16 +26,29 @@ const Navbar = () => {
                         <a href="#" class="nav-item nav-link">Messages</a>
                         <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a> */}
                     </div>
-                    <div class="navbar-nav ms-auto align-items-center gap-3">
-                        {/* <a href="/home" class="nav-item nav-link"><h5>Home</h5></a>
-                        <a href="/menu" class="nav-item nav-link"><h5>Menu</h5></a>
-                        {/* <a href="#" class="nav-item nav-link"><h5>Reservation</h5></a> */}
-                       {/* <a href="/aboutUs" class="nav-item nav-link"><h5>About Us</h5></a>
-                        {
-                            loggedInUser.name || <a href="#" class="nav-item nav-link"><h5>Login</h5></a>
-                        }
-                        <a href="/admin" class="nav-item nav-link"><h5>Admin</h5></a>
-                        <a href="/cart" class="nav-item nav-link"><ShoppingCartIcon className='shoppingCart'></ShoppingCartIcon></a> */}
+                    <div class="navbar-nav ms-auto align-items-center gap-5">
+
+
+                    <Nav className="justify-content-end gap-3" activeKey="/home">
+                        <Nav.Item>
+                            <Nav.Link ><Link to="/home"><h5>Home</h5></Link></Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link ><Link to="/menu"><h5>Menu</h5></Link></Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link ><Link to="/aboutUs"><h5>About Us</h5></Link></Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            {loggedInUser.name || <Nav.Link ><Link to="/login"><h5>LogIn</h5></Link></Nav.Link>}
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link ><Link to="/admin"><h5>Admin</h5></Link></Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link ><Link to="/cart"><ShoppingCartIcon className='shoppingCart'></ShoppingCartIcon></Link></Nav.Link>
+                        </Nav.Item>
+                    </Nav>
                     </div>
                 </div>
             </div>
