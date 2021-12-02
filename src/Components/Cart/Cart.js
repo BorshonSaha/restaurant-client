@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Col, ListGroup, Row, Image, Form, Button } from 'react-bootstrap';
 import AddFood from '../AddFood/AddFood';
 import { CartState } from '../context/Context';
 import Navbar from '../Navbar/Navbar';
 import { TrashIcon } from '@heroicons/react/outline';
 import { Link } from 'react-router-dom';
+import { SubtotalContext } from '../../App';
 
 const Cart = () => {
+
+    const [subtotal, setSubtotal] = useContext(SubtotalContext);
 
     const {
         state: { cart },
@@ -17,12 +20,19 @@ const Cart = () => {
 
     useEffect(() => {
         setTotal(cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0));
+        setSubtotal(cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0));
     }, [cart])
+
+    let visibility = 'disabled-link';
+
+    if(cart.length) {
+        visibility = '';
+    }
 
     return (
         <div>
             <Navbar></Navbar>
-            <h1 className="App">My Cart</h1>
+            <h1 className="App orange">My Cart</h1>
             <div className="d-flex gap-5">
                 <div className="col-md-9">
                     <ListGroup className="p-3">
@@ -76,7 +86,7 @@ const Cart = () => {
                 <div className="col-md-3">
                     <h3>Subtotal ({cart.length}) items</h3>
                     <h4>Total: ${total}</h4>
-                    <Link to="/checkout"><Button>Proceed to Checkout</Button></Link>
+                    <Link className={visibility} to="/payment"><Button className="paymentButton">Proceed to Payment</Button></Link>
                 </div>
             </div>
         </div>

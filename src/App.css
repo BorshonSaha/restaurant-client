@@ -10,6 +10,10 @@
 }
 /* img[alt]{font-size:1em;} */
 
+.disabled-link {
+  pointer-events: none;
+}
+
 body{
   font-family: 'Poppins', sans-serif;
 }

@@ -20,16 +20,19 @@ import { createContext, useState } from 'react';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Login from './Components/Login/Login';
 import Cart from './Components/Cart/Cart';
-import Checkout from './Components/Checkout/Checkout';
+import Payment from './Components/Payment/Payment';
 
 export const UserContext = createContext();
+export const SubtotalContext = createContext();
 
 function App() {
 
   const [loggedInUser, setLoggedInUser] = useState({});
+  const [subtotal, setSubtotal] = useState();
 
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <SubtotalContext.Provider value={[subtotal, setSubtotal]}>
       <Router>
         <Switch>
           <Route path="/home">
@@ -68,14 +71,15 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route path="/checkout">
-            <Checkout></Checkout>
-          </Route>
+          <PrivateRoute path="/payment">
+            <Payment></Payment>
+          </PrivateRoute>
           <Route exact path="/">
             <Home></Home>
           </Route>
         </Switch>
       </Router>
+      </SubtotalContext.Provider>
     </UserContext.Provider>
   );
 
