@@ -45,6 +45,9 @@ const Navbar = () => {
                             <Nav.Link ><Link to="/aboutUs"><h5>About Us</h5></Link></Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
+                            <Nav.Link ><Link to="/myOrder"><h5>My Order</h5></Link></Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
                             {loggedInUser.name || <Nav.Link ><Link to="/login"><h5>LogIn</h5></Link></Nav.Link>}
                         </Nav.Item>
                         <Nav.Item>

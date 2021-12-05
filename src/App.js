@@ -21,6 +21,11 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Login from './Components/Login/Login';
 import Cart from './Components/Cart/Cart';
 import Payment from './Components/Payment/Payment';
+import MyOrder from './Components/MyOrder/MyOrder';
+import ManageOrder from './Components/ManageOrder/ManageOrder';
+import ManageOrderCooking from './Components/ManageOrderCooking/ManageOrderCooking';
+import ManageOrderDelivered from './Components/ManageOrderDelivered.js/ManageOrderDelivered';
+import ManageOrderCancel from './Components/ManageOrderCancel/ManageOrderCancel';
 
 export const UserContext = createContext();
 export const SubtotalContext = createContext();
@@ -74,6 +79,21 @@ function App() {
           <PrivateRoute path="/payment">
             <Payment></Payment>
           </PrivateRoute>
+          <PrivateRoute path="/myOrder">
+            <MyOrder></MyOrder>
+          </PrivateRoute>
+          <Route path="/manageOrder">
+            <ManageOrder></ManageOrder>
+          </Route>
+          <Route path="/manageOrderCooking">
+            <ManageOrderCooking></ManageOrderCooking>
+          </Route>
+          <Route path="/manageOrderDelivered">
+            <ManageOrderDelivered></ManageOrderDelivered>
+          </Route>
+          <Route path="/manageOrderCancel">
+            <ManageOrderCancel></ManageOrderCancel>
+          </Route>
           <Route exact path="/">
             <Home></Home>
           </Route>

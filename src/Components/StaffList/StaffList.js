@@ -38,7 +38,7 @@ const StaffList = () => {
                         </tr>
                     </thead>
                     {
-                        staff.map(staffs => <tbody><tr><td>{staffs.name}</td><td>{staffs.address}</td><td>{staffs.number}</td><td>{staffs.address}</td><td><Button onClick={()=>deleteStaff(staffs._id)} variant="danger">Delete</Button></td></tr></tbody>)
+                        staff.map(staffs => <tbody><tr><td>{staffs.name}</td><td>{staffs.address}</td><td>{staffs.number}</td><td>{staffs.salary}</td><td><Button onClick={()=>deleteStaff(staffs._id)} variant="danger">Delete</Button></td></tr></tbody>)
                     }
                 </Table>
             </Container>
