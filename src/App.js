@@ -26,6 +26,9 @@ import ManageOrder from './Components/ManageOrder/ManageOrder';
 import ManageOrderCooking from './Components/ManageOrderCooking/ManageOrderCooking';
 import ManageOrderDelivered from './Components/ManageOrderDelivered.js/ManageOrderDelivered';
 import ManageOrderCancel from './Components/ManageOrderCancel/ManageOrderCancel';
+import ManagePayment from './Components/ManagePayment/ManagePayment';
+import NotAdmin from './Components/NotAdmin/NotAdmin';
+import NotFound from './Components/NotFound/NotFound';
 
 export const UserContext = createContext();
 export const SubtotalContext = createContext();
@@ -38,67 +41,76 @@ function App() {
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <SubtotalContext.Provider value={[subtotal, setSubtotal]}>
-      <Router>
-        <Switch>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-          <Route path="/menu">
-            <Menu></Menu>
-          </Route>
-          <Route path="/aboutUs">
-            <AboutUs></AboutUs>
-          </Route>
-          <PrivateRoute path="/admin">
-            <Admin></Admin>
-          </PrivateRoute>
-          <Route path="/addFood">
-            <AddFood></AddFood>
-          </Route>
-          <Route path="/manageFood">
-            <ManageFood></ManageFood>
-          </Route>
-          <Route path="/cart">
-            <Cart></Cart>
-          </Route>
-          <Route path="/makeAdmin">
-            <MakeAdmin></MakeAdmin>
-          </Route>
-          <Route path="/adminList">
-            <AdminList></AdminList>
-          </Route>
-          <Route path="/addStaff">
-            <AddStaff></AddStaff>
-          </Route>
-          <Route path="/staffList">
-            <StaffList></StaffList>
-          </Route>
-          <Route path="/login">
-            <Login></Login>
-          </Route>
-          <PrivateRoute path="/payment">
-            <Payment></Payment>
-          </PrivateRoute>
-          <PrivateRoute path="/myOrder">
-            <MyOrder></MyOrder>
-          </PrivateRoute>
-          <Route path="/manageOrder">
-            <ManageOrder></ManageOrder>
-          </Route>
-          <Route path="/manageOrderCooking">
-            <ManageOrderCooking></ManageOrderCooking>
-          </Route>
-          <Route path="/manageOrderDelivered">
-            <ManageOrderDelivered></ManageOrderDelivered>
-          </Route>
-          <Route path="/manageOrderCancel">
-            <ManageOrderCancel></ManageOrderCancel>
-          </Route>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-        </Switch>
-      </Router>
+        <Router>
+          <Switch>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path="/menu">
+              <Menu></Menu>
+            </Route>
+            <Route path="/aboutUs">
+              <AboutUs></AboutUs>
+            </Route>
+            <PrivateRoute path="/admin">
+              <Admin></Admin>
+            </PrivateRoute>
+            <Route path="/addFood">
+              <AddFood></AddFood>
+            </Route>
+            <Route path="/manageFood">
+              <ManageFood></ManageFood>
+            </Route>
+            <Route path="/cart">
+              <Cart></Cart>
+            </Route>
+            <Route path="/makeAdmin">
+              <MakeAdmin></MakeAdmin>
+            </Route>
+            <Route path="/adminList">
+              <AdminList></AdminList>
+            </Route>
+            <Route path="/addStaff">
+              <AddStaff></AddStaff>
+            </Route>
+            <Route path="/staffList">
+              <StaffList></StaffList>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <PrivateRoute path="/payment">
+              <Payment></Payment>
+            </PrivateRoute>
+            <PrivateRoute path="/myOrder">
+              <MyOrder></MyOrder>
+            </PrivateRoute>
+            <Route path="/manageOrder">
+              <ManageOrder></ManageOrder>
+            </Route>
+            <Route path="/manageOrderCooking">
+              <ManageOrderCooking></ManageOrderCooking>
+            </Route>
+            <Route path="/manageOrderDelivered">
+              <ManageOrderDelivered></ManageOrderDelivered>
+            </Route>
+            <Route path="/manageOrderCancel">
+              <ManageOrderCancel></ManageOrderCancel>
+            </Route>
+            <Route path="/managePayment">
+              <ManagePayment></ManagePayment>
+            </Route>
+            <PrivateRoute path="/notAdmin">
+              <NotAdmin></NotAdmin>
+            </PrivateRoute>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route exact path="*">
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+        </Router>
       </SubtotalContext.Provider>
     </UserContext.Provider>
   );

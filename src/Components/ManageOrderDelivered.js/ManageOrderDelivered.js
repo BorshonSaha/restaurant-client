@@ -43,11 +43,10 @@ const ManageOrderDelivered = () => {
                         <th>Order Status</th>
                         <th></th>
                         <th></th>
-                        <th></th>
                     </tr>
                 </thead>
                 {
-                    orders.map(order => <tbody><tr><td>{order._id}</td><td>{order.email}</td><td>{order.items}</td><td>{order.totalAmount}</td><td>{order.date} , {order.time}</td><td>{order.card.address_line1}, {order.card.address_city}, {order.card.address_zip}</td><td>{order.status}</td><td><Button onClick={() => updateStatus(order._id, 'Cooking')}>Cooking</Button></td><td><Button onClick={() => updateStatus(order._id, 'Delivered')} variant="success">Delivered</Button></td><td><Button onClick={() => updateStatus(order._id, 'Cancel')} variant="danger">Cancel</Button></td></tr></tbody>)
+                    orders.map(order => <tbody><tr><td>{order._id}</td><td>{order.email}</td><td>{order.items}</td><td>{order.totalAmount}</td><td>{order.date} , {order.time}</td><td>{order.card.address_line1}, {order.card.address_city}, {order.card.address_zip}</td><td>{order.status}</td><td><Button onClick={() => updateStatus(order._id, 'Cooking')}>Cooking</Button></td><td><Button onClick={() => updateStatus(order._id, 'Delivered')} variant="success">Delivered</Button></td></tr></tbody>)
                 }
             </Table>
         </div>

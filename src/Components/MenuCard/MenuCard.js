@@ -10,15 +10,6 @@ const MenuCard = ({ food }) => {
         dispatch,
     } = CartState();
 
-    function addToBasket (name, price) {
-        localStorage.setItem(name, price);
-
-        // console.log(allStorage());
-        const items = {...localStorage};
-        console.log(items);
-        
-    }
-
     return (
         <div className="col-md-4">
             <div className={`d-flex justify-content-center`}>
@@ -44,7 +35,6 @@ const MenuCard = ({ food }) => {
                                 }}>Add To Cart</Button>
                             )
                         }
-                        {/* <Button onClick={() => addToBasket(food.name, food.price)}>Add to Basket</Button> */}
                     </div>
                 </div>
             </div>

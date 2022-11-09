@@ -13,12 +13,12 @@ const Time = () => {
                 <div className='col-md-3'>
                     <img src="https://i.ibb.co/0jBBMG2/lunch.png" alt="" />
                     <h4 className='mt-3'>Lunch</h4>
-                    <b>1.00 - 3.00 AM</b>
+                    <b>1.00 - 3.00 PM</b>
                 </div>
                 <div className='col-md-3'>
                     <img src="https://i.ibb.co/MpXCmT9/dinner.png" alt="" />
                     <h4 className='mt-3'>Dinner</h4>
-                    <b>7.00 - 9.00 AM</b>
+                    <b>7.00 - 9.00 PM</b>
                 </div>
                 <div className='col-md-3'>
                     <img src="https://i.ibb.co/ynmsCwk/dessert.png" alt="" />

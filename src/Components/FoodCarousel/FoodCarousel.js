@@ -5,6 +5,7 @@ import { Button } from 'primereact/button';
 import '../../../node_modules/primereact/resources/themes/saga-blue/theme.css';
 import '../../../node_modules/primereact/resources/primereact.min.css';
 import '../../../node_modules/primeicons/primeicons.css';
+import {Link} from 'react-router-dom';
 
 const FoodCarousel = () => {
 
@@ -46,7 +47,7 @@ const FoodCarousel = () => {
                         <h6 className="p-mt-0 p-mb-3">${products.price}</h6>
                         {/* <span className={`product-badge status-${product.inventoryStatus.toLowerCase()}`}>{product.inventoryStatus}</span> */}
                         <div className="car-buttons p-mt-5">
-                            <Button>Add to Basket</Button>
+                            <Link to="/menu"><Button>Order Now</Button></Link>
                         </div>
                     </div>
                 </div>

@@ -69,7 +69,7 @@ const ManageFood = () => {
                     }
                 </Table>
                 
-                <h1>Update Box</h1>
+                <h1 className="mt-5">Update Box</h1>
                 <div className="from-group pt-3" >
                     <input type="text" id='name' className="form-control" name='name' required />
                 </div>
